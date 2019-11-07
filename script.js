@@ -157,4 +157,23 @@ function cargar()
         document.getElementById("indicador3").innerHTML = "IV";
         document.getElementById("indicador4").innerHTML = "01";
     }
-}
+
+    var d = document.getElementById("prov");
+    var displayText = d.options[d.selectedIndex].value;
+
+    if ( IVA == "si" && ( displayText == "SF" || displayText =="CF" ||displayText == "CB" ) )
+    {
+        if ( activity == "SP")
+        {
+            document.getElementById("ex1").innerHTML = "0";
+            document.getElementById("ex2").innerHTML = "100";
+            document.getElementById("ex3").innerHTML = "5";
+        }
+        else
+        {
+            document.getElementById("ex1").innerHTML = "0";
+            document.getElementById("ex2").innerHTML = "100";
+            document.getElementById("ex3").innerHTML = "1";
+        }
+    }
+}//byEP
