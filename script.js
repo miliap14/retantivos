@@ -50,17 +50,18 @@ document.getElementById("holis").addEventListener("click", cargar);
 var valorCondicion = document.getElementsByName("condicion");
 var valorActividad =document.getElementsByName("actividad");
 var valorRegimen = document.getElementsByName("regimen");
+var valorIva = document.getElementsByName("conIVA");
 
 var condition;
 var activity;
-var regimen;
+var IVA;
 
 function cargar() 
 {
     //-------------------------------------------
     //--- OBTENEMOS LOS VALORES DE LOS CHECK ----
     //-------------------------------------------
-    
+
     for ( var i = 0; i < valorCondicion.length; i++)
     {
         if(valorCondicion[i].checked)
@@ -77,14 +78,24 @@ function cargar()
         }
     }
 
+    for ( var i = 0; i < valorIva.length; i++)
+    {
+        if(valorIva[i].checked)
+        {
+            IVA = valorIva[i].value;
+        }
+    }
+
     for ( var i = 0; i < valorRegimen.length; i++)
     {
-        if(valorRegimen[i].checked && valorRegimen[i].value == "si")
+        if(valorRegimen[i].checked && valorRegimen[i].value == "si" && IVA == "no")
         {
             document.getElementById("indicador5").innerHTML = "SG";
             document.getElementById("indicador6").innerHTML = "01";
         }
     }
+
+    
 
     //-------------------------------------------
     //----- DATOS PARA MONOTRIBUTO --------------
