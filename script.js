@@ -1,7 +1,6 @@
     
     
-    var valorCondicion = document.getElementsByClassName("condicion").values;
-    var valorActividad =document.getElementsByClassName("actividad").values;
+    
     /*
     var monotributo = document.getElementById("mon").checked;
     var resincr = document.getElementById("res").checked;
@@ -40,35 +39,54 @@ function selectProv()
                 document.getElementById("prov_value").innerHTML = displayText;
                 document.getElementById("prov_value2").innerHTML = "02";     
             }
-        
+}
+  
+
 
         //-----------------------------------------
         //--- CARGA DE INDICADOR DE TIPO PERSONA --
         //-----------------------------------------
-        /*
-        var tipoPersona = document.forms[0]
+document.getElementById("holis").addEventListener("click", cargar);
+var valorCondicion = document.getElementsByName("condicion");
+var valorActividad =document.getElementsByName("actividad");
+var valorRegimen = document.getElementsByName("regimen");
 
-        for ( var i = 0; i < tipoPersona.length; i++)
+var condition;
+var activity;
+var regimen;
+
+function cargar() 
+{
+    for ( var i = 0; i < valorCondicion.length; i++)
+    {
+        if(valorCondicion[i].checked)
         {
-            if(tipoPersona[i].checked)
-            {
-                if(tipoPersona[i].value == "MO")
-                {
-                    document.getElementById("indicador1").innerHTML = "GM";
-                    document.getElementById("indicador2").innerHTML = "02";
-                }
-                else if (tipoPersona[i].value == "RI")
-                {
-                    document.getElementById("indicador1").innerHTML = "GB";
-                    document.getElementById("indicador2").innerHTML = "01";
-                }
-            }
-        }*/
-    
+           condition = valorCondicion[i].value;
+        }
+    }
 
-    
+    for ( var i = 0; i < valorActividad.length; i++)
+    {
+        if(valorActividad[i].checked)
+        {
+            activity = valorActividad[i].value;
+        }
+    }
 
-   
-    
+    for ( var i = 0; i < valorRegimen.length; i++)
+    {
+        if(valorRegimen[i].checked)
+        {
+            regimen = valorRegimen[i].value;
+        }
+    }
 
+    if( condition == "MO" && activity == "SR")
+    {
+        document.getElementById("indicador1").innerHTML = "GM";
+        document.getElementById("indicador2").innerHTML = "02";
+        document.getElementById("indicador3").innerHTML = "IM";
+        document.getElementById("indicador4").innerHTML = "02";
+    }
+    
 }

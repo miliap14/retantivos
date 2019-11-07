@@ -37,10 +37,17 @@
     <label><input type="radio" class="condicion" name="condicion" value="RI" id="res">Responsable Inscripto</label>
     <label><input type="radio" class="condicion" name="condicion" value="MO" id="mon">Monotributo</label>
     <br><br>
-    <label><input type="radio" class="actividad" name="condicion" value="SP">Servicios Profesionales (Solo Personas)</label>
-    <label><input type="radio" class="actividad" name="condicion" value="SR">Servicios</label>
-    <label><input type="radio" class="actividad" name="condicion" value="BU">Bienes</label>
+    <label><input type="radio" class="actividad" name="actividad" value="SP">Servicios Profesionales (Solo Personas)</label>
+    <label><input type="radio" class="actividad" name="actividad" value="SR">Servicios</label>
+    <label><input type="radio" class="actividad" name="actividad" value="BU">Bienes</label>
     <br><br>
+    <label><input type="radio" class="regimen" name="regimen" value="si">Tiene regimen social</label>
+    <label><input type="radio" class="regimen" name="regimen" value="no">NO tiene regimen social</label>
+    <br><br>
+    <label><input type="radio" class="regimen" name="conIVA" value="si">Está excento de IVA</label>
+    <label><input type="radio" class="regimen" name="conIVA" value="no">NO ESTÁ excento de IVA</label>
+    <br><br>
+    <button id="holis">Holis</button>
     <table class="egt">
         <tr>
           <td id="prov_value"></td>
@@ -69,8 +76,6 @@
           </tr>
 
       </table>
-
-      <input type="button" onclick="cargar()" name="" id="">
 </body>
 <script src="script.js"></script>
 </html>
