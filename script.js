@@ -168,9 +168,14 @@ function cargar()
     {
         if ( activity == "SP")
         {
+            var dia = new Date();
+            var mes = new Date();
+            var anio = new Date();
             document.getElementById("ex1").innerHTML = "0";
             document.getElementById("ex2").innerHTML = "100";
             document.getElementById("ex3").innerHTML = "5";
+            document.getElementById("ex4").innerHTML = dia.getDate() + "." + mes.getMonth() + "." + anio.getUTCFullYear();
+            document.getElementById("ex5").innerHTML = "31.12.9999"
         }
         else
         {
