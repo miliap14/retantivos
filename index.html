@@ -8,29 +8,33 @@
 <body>
     <h1>Rellene para obtener sus indicadores</h1>
     <hr>
-    <select name="" id="prov">
-        <option value="SANTA FE">SANTA FE</option>
-        <option value="MENDOZA">MENDOZA</option>
-        <option value="BSAS">BSAS</option>
-        <option value="CABA">CABA</option>
-        <option value="ENTRE RIOS">ENTRE RIOS</option>
-        <option value="CORDOBA">CORDOBA</option>
-        <option value="SALTA">SALTA</option>
-        <option value="RIO NEGRO">RIO NEGRO</option>
-        <option value="CHACO">CHACO</option>
-        <option value="SANTIAGO DEL ESTERO">SANTIAGO DEL ESTERO</option>
-        <option value="LA PAMPA">LA PAMPA</option>
-        <option value="CORRIENTES">CORRIENTES</option>
-        <option value="MISIONES">MISIONES</option>
-        <option value="NEUQUEN">NEUQUEN</option>
-        <option value="CHUBUT">CHUBUT</option>
-        <option value="TIERRA DEL FUEGO">TIERRA DEL FUEGO</option>
-        <option value="TUCUMAN">TUCUMAN</option>
-        <option value="SAN JUAN">SAN JUAN</option>
-        <option value="SAN LUIS">SAN LUIS</option>
-        <option value="JUJUY">JUJUY</option>
-        <option value="CATAMARCA">CATAMARCA</option>
-        <option value="FORMOSA">FORMOSA</option>        
+    <select name="" id="prov" onchange="selectProv();">
+        <option value="">-- Seleccione provincia --</option>
+        <option value="SF">SANTA FE</option>
+        <option value="MZ">MENDOZA</option>
+        <option value="BA">BSAS</option>
+        <option value="CF">CABA</option>
+        <option value="ER">ENTRE RIOS</option>
+        <option value="CB">CORDOBA</option>
+        <option value="ST">SALTA</option>
+        <option value="RN">RIO NEGRO</option>
+        <option value="CC">CHACO</option>
+        <option value="SD">SANTIAGO DEL ESTERO</option>
+        <option value="LP">LA PAMPA</option>
+        <option value="CC">CORRIENTES</option>
+        <option value="MI">MISIONES</option>
+        <option value=" ">NEUQUEN</option>
+        <option value=" ">CHUBUT</option>
+        <option value=" ">TIERRA DEL FUEGO</option>
+        <option value="TU">TUCUMAN</option>
+        <option value=" ">SAN JUAN</option>
+        <option value="SL">SAN LUIS</option>
+        <option value="JU">JUJUY</option>
+        <option value=" ">CATAMARCA</option>
+        <option value=" ">FORMOSA</option>        
     </select>
+    <input type="text" id="prov_value">
+    <input type="text" id="prov_value2">
 </body>
+<script src="script.js"></script>
 </html>
