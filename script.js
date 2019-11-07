@@ -57,6 +57,10 @@ var regimen;
 
 function cargar() 
 {
+    //-------------------------------------------
+    //--- OBTENEMOS LOS VALORES DE LOS CHECK ----
+    //-------------------------------------------
+    
     for ( var i = 0; i < valorCondicion.length; i++)
     {
         if(valorCondicion[i].checked)
@@ -75,18 +79,65 @@ function cargar()
 
     for ( var i = 0; i < valorRegimen.length; i++)
     {
-        if(valorRegimen[i].checked)
+        if(valorRegimen[i].checked && valorRegimen[i].value == "si")
         {
-            regimen = valorRegimen[i].value;
+            document.getElementById("indicador5").innerHTML = "SG";
+            document.getElementById("indicador6").innerHTML = "01";
         }
     }
 
-    if( condition == "MO" && activity == "SR")
+    //-------------------------------------------
+    //----- DATOS PARA MONOTRIBUTO --------------
+    //-------------------------------------------
+
+    if( condition == "MO" && activity == "SR" )
     {
         document.getElementById("indicador1").innerHTML = "GM";
         document.getElementById("indicador2").innerHTML = "02";
         document.getElementById("indicador3").innerHTML = "IM";
         document.getElementById("indicador4").innerHTML = "02";
     }
+
+    if( condition == "MO" && activity == "BU")
+    {
+        document.getElementById("indicador1").innerHTML = "GM";
+        document.getElementById("indicador2").innerHTML = "01";
+        document.getElementById("indicador3").innerHTML = "IM";
+        document.getElementById("indicador4").innerHTML = "01";
+    }
+
+    if( condition == "MO" && activity == "SP")
+    {
+        document.getElementById("indicador1").innerHTML = "ERROR";
+        document.getElementById("indicador2").innerHTML = "No puede ser Monotributista";
+        document.getElementById("indicador3").innerHTML = "Y seleccionar Servicio profesional";
+    }
+
+    //------------------------------------------
+    //---- DATOS PARA RESPONSABLE INSCRIPTO ----
+    //------------------------------------------
+
+    if( condition == "RI" && activity == "SR" )
+    {
+        document.getElementById("indicador1").innerHTML = "GB";
+        document.getElementById("indicador2").innerHTML = "01";
+        document.getElementById("indicador3").innerHTML = "IV";
+        document.getElementById("indicador4").innerHTML = "01";
+    }
     
+    if( condition == "RI" && activity == "BU")
+    {
+        document.getElementById("indicador1").innerHTML = "GA";
+        document.getElementById("indicador2").innerHTML = "07";
+        document.getElementById("indicador3").innerHTML = "IS";
+        document.getElementById("indicador4").innerHTML = "01";
+    }
+
+    if( condition == "RI" && activity == "SP")
+    {
+        document.getElementById("indicador1").innerHTML = "GA";
+        document.getElementById("indicador2").innerHTML = "08";
+        document.getElementById("indicador3").innerHTML = "IV";
+        document.getElementById("indicador4").innerHTML = "01";
+    }
 }
