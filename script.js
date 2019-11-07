@@ -1,46 +1,72 @@
-function selectProv() 
-{
-    var d = document.getElementById("prov");
+var d = document.getElementById("prov");
     var displayText = d.options[d.selectedIndex].value;
-    document.getElementById("prov_value").innerHTML = displayText;
-
-    switch (displayText) 
-    {
-        case "SF":
-            document.getElementById("prov_value2").innerHTML = "10"
-            break;
-
-        case " ":
-            document.getElementById("prov_value2").innerHTML = " "
-            break;
     
-        default:
-            document.getElementById("prov_value2").innerHTML = "01";
-            break;
-    }
-
-    if (d.options[d.selectedIndex].text == "CHACO" ) 
-    {
-        document.getElementById("prov_value2").innerHTML = "02";     
-    }
-
-    var valorCondicion = document.getElementsByName("condicion").values;
-    var valorActividad =document.getElementsByName("actividad").values;
+    var valorCondicion = document.getElementsByClassName("condicion").values;
+    var valorActividad =document.getElementsByClassName("actividad").values;
+    /*
     var monotributo = document.getElementById("mon").checked;
     var resincr = document.getElementById("res").checked;
+    */
 
-    if (monotributo == true) 
+    
+
+    function cargar() 
     {
-        if (valorCondicion == "MO") 
+
+    //-----------------------------------------
+    //---- CARGA DE INDICADOR DE PROVINCIA ----
+    //-----------------------------------------
+
+        document.getElementById("prov_value").innerHTML = displayText;
+
+        switch (displayText) 
+            {
+                case "SF":
+                    document.getElementById("prov_value2").innerHTML = "10"
+                    break;
+
+                case " ":
+                    document.getElementById("prov_value2").innerHTML = " "
+                    break;
+            
+                default:
+                    document.getElementById("prov_value2").innerHTML = "01";
+                    break;
+            }
+
+        if (d.options[d.selectedIndex].text == "CHACO" ) 
+            {
+                document.getElementById("prov_value2").innerHTML = "02";     
+            }
+        
+
+        //-----------------------------------------
+        //---- CARGA DE INDICADOR DE PROVINCIA ----
+        //-----------------------------------------
+        var tipoPersona = document.forms[0]
+
+        for ( var i = 0; i < tipoPersona.length; i++)
         {
-             document.getElementById("indicador1").innerHTML = "GM";
-        } 
-        else 
-        {
-             document.getElementById("indicador1").innerHTML = "lol";
-             document.getElementById("indicador2").innerHTML = "02";
+            if(tipoPersona[i].checked)
+            {
+                if(tipoPersona[i].value == "MO")
+                {
+                    document.getElementById("indicador1").innerHTML = "GM";
+                    document.getElementById("indicador2").innerHTML = "02";
+                }
+                else if (tipoPersona[i].value == "RI")
+                {
+                    document.getElementById("indicador1").innerHTML = "GB";
+                    document.getElementById("indicador2").innerHTML = "01";
+                }
+            }
         }
+        
     }
     
 
-}
+    
+
+   
+    
+
