@@ -1,5 +1,4 @@
-var d = document.getElementById("prov");
-    var displayText = d.options[d.selectedIndex].value;
+    
     
     var valorCondicion = document.getElementsByClassName("condicion").values;
     var valorActividad =document.getElementsByClassName("actividad").values;
@@ -8,41 +7,45 @@ var d = document.getElementById("prov");
     var resincr = document.getElementById("res").checked;
     */
 
-    
-
-    function cargar() 
-    {
-
+function selectProv() 
+{
+    var d = document.getElementById("prov");
+    var displayText = d.options[d.selectedIndex].value;
     //-----------------------------------------
     //---- CARGA DE INDICADOR DE PROVINCIA ----
     //-----------------------------------------
 
-        document.getElementById("prov_value").innerHTML = displayText;
+        
 
         switch (displayText) 
             {
                 case "SF":
+                    document.getElementById("prov_value").innerHTML = displayText;
                     document.getElementById("prov_value2").innerHTML = "10"
                     break;
 
                 case " ":
+                    document.getElementById("prov_value").innerHTML = displayText;
                     document.getElementById("prov_value2").innerHTML = " "
                     break;
             
                 default:
+                    document.getElementById("prov_value").innerHTML = displayText;
                     document.getElementById("prov_value2").innerHTML = "01";
                     break;
             }
 
         if (d.options[d.selectedIndex].text == "CHACO" ) 
             {
+                document.getElementById("prov_value").innerHTML = displayText;
                 document.getElementById("prov_value2").innerHTML = "02";     
             }
         
 
         //-----------------------------------------
-        //---- CARGA DE INDICADOR DE PROVINCIA ----
+        //--- CARGA DE INDICADOR DE TIPO PERSONA --
         //-----------------------------------------
+        /*
         var tipoPersona = document.forms[0]
 
         for ( var i = 0; i < tipoPersona.length; i++)
@@ -60,9 +63,7 @@ var d = document.getElementById("prov");
                     document.getElementById("indicador2").innerHTML = "01";
                 }
             }
-        }
-        
-    }
+        }*/
     
 
     
@@ -70,3 +71,4 @@ var d = document.getElementById("prov");
    
     
 
+}
