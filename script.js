@@ -63,6 +63,9 @@ function cargar()
     document.getElementById("indicador7").innerHTML = "";
     document.getElementById("indicador8").innerHTML = "";
     document.getElementById("indicador8").innerHTML = "";
+    document.getElementById("ex1").innerHTML = "";
+    document.getElementById("ex2").innerHTML = "";
+    document.getElementById("ex3").innerHTML = "";
 
     //-------------------------------------------
     //--- OBTENEMOS LOS VALORES DE LOS CHECK ----
@@ -176,4 +179,4 @@ function cargar()
             document.getElementById("ex3").innerHTML = "1";
         }
     }
-}//byEP
+}
