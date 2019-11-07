@@ -7,20 +7,20 @@ function selectProv()
     switch (displayText) 
     {
         case "SF":
-            document.getElementById("prov_value2").value = "10"
+            document.getElementById("prov_value2").innerHTML = "10"
             break;
 
         case " ":
-            document.getElementById("prov_value2").value = " "
+            document.getElementById("prov_value2").innerHTML = " "
             break;
     
         default:
-            document.getElementById("prov_value2").value = "01";
+            document.getElementById("prov_value2").innerHTML = "01";
             break;
     }
 
     if (d.options[d.selectedIndex].text == "CHACO") 
     {
-        document.getElementById("prov_value2").value = "02";     
+        document.getElementById("prov_value2").innerHTML = "02";     
     }
 }
