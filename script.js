@@ -1,11 +1,3 @@
-    
-    
-    
-    /*
-    var monotributo = document.getElementById("mon").checked;
-    var resincr = document.getElementById("res").checked;
-    */
-
 function selectProv() 
 {
     var d = document.getElementById("prov");
@@ -58,6 +50,20 @@ var IVA;
 
 function cargar() 
 {
+    //-------------------------------------------
+    //------ LIMPIAMOS -----
+    //-------------------------------------------
+
+    document.getElementById("indicador1").innerHTML = "";
+    document.getElementById("indicador2").innerHTML = "";
+    document.getElementById("indicador3").innerHTML = "";
+    document.getElementById("indicador4").innerHTML = "";
+    document.getElementById("indicador5").innerHTML = "";
+    document.getElementById("indicador6").innerHTML = "";
+    document.getElementById("indicador7").innerHTML = "";
+    document.getElementById("indicador8").innerHTML = "";
+    document.getElementById("indicador8").innerHTML = "";
+
     //-------------------------------------------
     //--- OBTENEMOS LOS VALORES DE LOS CHECK ----
     //-------------------------------------------
