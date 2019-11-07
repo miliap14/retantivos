@@ -171,10 +171,11 @@ function cargar()
             var dia = new Date();
             var mes = new Date();
             var anio = new Date();
+            var corr_mes = mes.getUTCMonth() + 1;
             document.getElementById("ex1").innerHTML = "0";
             document.getElementById("ex2").innerHTML = "100";
             document.getElementById("ex3").innerHTML = "5";
-            document.getElementById("ex4").innerHTML = dia.getDate() + "." + mes.getMonth() + "." + anio.getUTCFullYear();
+            document.getElementById("ex4").innerHTML = dia.getDate() + "." + corr_mes + "." + anio.getUTCFullYear();
             document.getElementById("ex5").innerHTML = "31.12.9999"
         }
         else
