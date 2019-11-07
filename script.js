@@ -19,8 +19,30 @@ function selectProv()
             break;
     }
 
-    if (d.options[d.selectedIndex].text == "CHACO") 
+    if (d.options[d.selectedIndex].text == "CHACO" ) 
     {
         document.getElementById("prov_value2").innerHTML = "02";     
     }
+
+    var a = document.getElementsByName("condicion").values;
+    var valorCondicion = a.options[a.selectedIndex].value;
+    var b = document.getElementsByName("actividad");
+    var valorActividad = b.options[b.selectedIndex].value;
+    var monotributo = document.getElementById("mon").checked;
+    var resincr = document.getElementById("res").checked;
+
+    if (monotributo && resincr) 
+    {
+        if (valorCondicion == "MO") 
+        {
+             document.getElementById("indicador1").innerHTML = "GM";
+        } 
+        else 
+        {
+             document.getElementById("indicador1").innerHTML = "GM";
+             document.getElementById("indicador2").innerHTML = "02";
+        }
+    }
+    
+
 }
