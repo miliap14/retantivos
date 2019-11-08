@@ -185,4 +185,20 @@ function cargar()
             document.getElementById("ex3").innerHTML = "1";
         }
     }
+
+    if ( displayText == "T.F" )
+    {
+        document.getElementById("indicador1").innerHTML = "Tierra del Fuego no lleva tilde en ningún indicador";
+        document.getElementById("indicador2").innerHTML = "";
+        document.getElementById("indicador3").innerHTML = "";
+        document.getElementById("indicador4").innerHTML = "";
+        document.getElementById("indicador5").innerHTML = "";
+        document.getElementById("indicador6").innerHTML = "";
+        document.getElementById("indicador7").innerHTML = "";
+        document.getElementById("indicador8").innerHTML = "";
+        document.getElementById("indicador8").innerHTML = "";
+        document.getElementById("ex1").innerHTML = "";
+        document.getElementById("ex2").innerHTML = "";
+        document.getElementById("ex3").innerHTML = "";
+    }
 }
