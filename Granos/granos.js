@@ -13,9 +13,22 @@ var valorEmpleador = document.getElementsByName("empleador");
 
 //obtención del boton
 document.getElementById("holis").addEventListener("click", cargar);
+var a = document.getElementById("tp_ret1").innerHTML;
+
+
+var b = document.getElementById("ind_ret1").innerHTML;
 
 function cargar()
 {
+    //------> LIMPIEZA <---------
+    document.getElementById("tp_ret1").innerHTML = "";
+    document.getElementById("ind_ret1").innerHTML = "";
+    document.getElementById("tp_ret2").innerHTML = "";
+    document.getElementById("ind_ret2").innerHTML = "";
+    document.getElementById("tp_ret3").innerHTML = "";
+    document.getElementById("ind_ret3").innerHTML = "";
+
+    //------> VARIABLES <-------
     var valorCategoria = document.getElementById("categoria");
     categoria = valorCategoria.options[valorCategoria.selectedIndex].text;
     console.log(categoria);
@@ -26,6 +39,8 @@ function cargar()
         if (valorGanancias[i].checked) 
         {
             ganancias = valorGanancias[i].value;
+            console.log(ganancias);
+            
         }
     }
 
@@ -34,6 +49,8 @@ function cargar()
         if (valorCondicion[i].checked) 
         {
             condicion = valorCondicion[i].value;
+            console.log(condicion);
+            
         }
     }
 
@@ -42,6 +59,8 @@ function cargar()
         if (valorGrano[i].checked) 
         {
             grano = valorGrano[i].value;
+            console.log(grano);
+            
         }
     }
 
@@ -50,14 +69,20 @@ function cargar()
         if (valorEmpleador[i].checked) 
         {
             empleador = valorEmpleador[i].value;
+            console.log(empleador);
+            
         }
     }
 
-//--------------------------
-//---------- CASOS ---------
+    //--------------------------
+    //---------- CASOS ---------
 
-//---- Productores de grano inscriptos en ganancias
-    if (valorGanancias == "si" && valorCondicion == "productor")
+
+    //-------> GANANCIAS <---------
+
+    //---- Productores de grano inscriptos en ganancias
+    
+    if (ganancias == "si" && condicion == "productor")
     {
         switch (categoria) 
         {
@@ -83,17 +108,17 @@ function cargar()
         }
     }
 
-//---- Productores de grano inscriptos en ganancias
+    //---- Productores de grano inscriptos en ganancias
 
-    if (valorGanancias == "no" && valorCondicion == "productor")
+    if (ganancias == "no" && condicion == "productor")
     {
         document.getElementById("tp_ret1").innerHTML = "GG";
         document.getElementById("ind_ret1").innerHTML = "04";
     }
 
 
-//---- Corredor de grano inscriptos en ganancias    
-    if (valorGanancias == "si" && valorCondicion == "corredor")
+    //---- Corredor de grano inscriptos en ganancias    
+    if (ganancias == "si" && condicion == "corredor")
     {
         switch (categoria) 
         {
@@ -119,13 +144,138 @@ function cargar()
         }
     }
 
-//---- Corredor de grano NO inscriptos en ganancias  
+    //---- Corredor de grano NO inscriptos en ganancias  
 
-    if (valorGanancias == "no" && valorCondicion == "corredor")
+    if (ganancias == "no" && condicion == "corredor")
     {
         document.getElementById("tp_ret1").innerHTML = "GG";
         document.getElementById("ind_ret1").innerHTML = "08";
     }
+
+    //-------> IVA <---------
+
+    //------ Productor arroz
+    if (condicion == "productor" && grano == "arroz")
+    {
+        switch (categoria) 
+        {
+            case "1":
+                document.getElementById("tp_ret2").innerHTML = "GI";
+                document.getElementById("ind_ret2").innerHTML = "08";
+                break;
+            
+            case "2":
+                document.getElementById("tp_ret2").innerHTML = "GI";
+                document.getElementById("ind_ret2").innerHTML = "09";
+                break;
+            
+            case "3":
+                document.getElementById("tp_ret2").innerHTML = "GI";
+                document.getElementById("ind_ret2").innerHTML = "10";
+                break;
+            
+            case "INACTIVO":
+                document.getElementById("tp_ret2").innerHTML = "GI";
+                document.getElementById("ind_ret2").innerHTML = "11";
+                break;
+        }
+    }
+
+    //------ Productor NO arroz
+    if (condicion == "productor" && grano == "no arroz")
+    {
+        switch (categoria) 
+        {
+            case "1":
+                document.getElementById("tp_ret2").innerHTML = "GI";
+                document.getElementById("ind_ret2").innerHTML = "01";
+                break;
+            
+            case "2":
+                document.getElementById("tp_ret2").innerHTML = "GI";
+                document.getElementById("ind_ret2").innerHTML = "02";
+                break;
+            
+            case "3":
+                document.getElementById("tp_ret2").innerHTML = "GI";
+                document.getElementById("ind_ret2").innerHTML = "03";
+                break;
+            
+            case "INACTIVO":
+                document.getElementById("tp_ret2").innerHTML = "GI";
+                document.getElementById("ind_ret2").innerHTML = "04";
+                break;
+        }
+    }
+
+    //------ Corredor arroz
+    if (condicion == "corredor" && grano == "arroz")
+    {
+        switch (categoria) 
+        {
+            case "1":
+                document.getElementById("tp_ret2").innerHTML = "GI";
+                document.getElementById("ind_ret2").innerHTML = "08";
+                break;
+            
+            case "2":
+                document.getElementById("tp_ret2").innerHTML = "GI";
+                document.getElementById("ind_ret2").innerHTML = "08";
+                break;
+            
+            case "3":
+                document.getElementById("tp_ret2").innerHTML = "GI";
+                document.getElementById("ind_ret2").innerHTML = "10";
+                break;
+            
+            case "INACTIVO":
+                document.getElementById("tp_ret2").innerHTML = "GI";
+                document.getElementById("ind_ret2").innerHTML = "11";
+                break;
+        }
+    }
+
+    //------ Corredor NO arroz
+    if (condicion == "corredor" && grano == "no arroz")
+    {
+        switch (categoria) 
+        {
+            case "1":
+                document.getElementById("tp_ret2").innerHTML = "GI";
+                document.getElementById("ind_ret2").innerHTML = "01";
+                break;
+            
+            case "2":
+                document.getElementById("tp_ret2").innerHTML = "GI";
+                document.getElementById("ind_ret2").innerHTML = "01";
+                break;
+            
+            case "3":
+                document.getElementById("tp_ret2").innerHTML = "GI";
+                document.getElementById("ind_ret2").innerHTML = "03";
+                break;
+            
+            case "INACTIVO":
+                document.getElementById("tp_ret2").innerHTML = "GI";
+                document.getElementById("ind_ret2").innerHTML = "04";
+                break;
+        }
+    }
+
+    //-------> EMPLEADOR <----------
+    if (empleador == "si") 
+    {
+        document.getElementById("tp_ret3").innerHTML = "SG";
+        document.getElementById("ind_ret3").innerHTML = "01";
+    }
+
+    if (empleador == "no")
+    {
+        document.getElementById("tp_ret3").innerHTML = "";
+        document.getElementById("ind_ret3").innerHTML = "";
+    }
+
+
 
 }
 
