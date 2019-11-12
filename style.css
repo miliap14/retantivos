@@ -1,0 +1,35 @@
+body
+{
+    background-image: url(sancor-seguros-800x600.png);
+    background-repeat: no-repeat;
+}
+
+h1
+{
+  position: relative;
+  left: 1em;
+  font-size: 3em;  
+  color: white;
+}
+
+div.seleccion
+{
+    color: white;
+    font-size: 2em;
+}
+
+p
+{
+    position: relative;
+    top: 10.5em;
+}
+
+a
+{
+    position: relative;
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    top: 10em;
+    left: 2em;
+}
