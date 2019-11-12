@@ -1,0 +1,53 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Rellene para obtener sus indicadores</h1>
+    <hr>
+    <label for="">Ingrese la categoría de SISA </label>
+    <Input type="number" min="1" max="3" id="categoria"></Input>
+    <br><br>
+    <label for="">¿Está inscripto en ganancias? </label>
+    <label for=""><input type="radio" name="ganancias" value="si">Si</label>
+    <label for=""><input type="radio" name="ganancias" value="no">No</label>
+    <br><br>
+    <label for="">¿Que condición presenta? </label>
+    <label for=""><input type="radio" name="condicion" value="productor">Productor</label>
+    <label for=""><input type="radio" name="condicion" value="corredor">Corredor</label>
+    <br><br>
+    <label for="">¿Que tipo de grano?</label>
+    <label for=""><input type="radio" name="grano" value="arroz">Arroz</label>
+    <label for=""><input type="radio" name="grano" value="no arroz">No Arroz</label>
+    <br><br>
+    <label for="">¿Es empleador?</label>
+    <label for=""><input type="radio" name="empleador" value="si">Si</label>
+    <label for=""><input type="radio" name="empleador" value="no">No</label>
+    <br><br>
+    <button id="holis">CALCULAR</button>
+    <br><br>
+
+    <h1>Resultado:</h1>
+    <table class="egt">
+        <tr>
+          <td id="tp_ret1"></td>
+          <td id="ind_ret1"></td>
+        </tr>
+      
+        <tr>
+          <td id="tp_ret2"></td>
+          <td id="ind_ret2"></td>
+        </tr>
+
+        <tr>
+          <td id="tp_ret3"></td>
+          <td id="ind_ret3"></td>
+        </tr>
+      </table>
+      
+    <script src="granos.js"></script>
+</body>
+</html>
