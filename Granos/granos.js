@@ -51,5 +51,54 @@ function cargar()
         }
     }
 
+//--------------------------
+//---------- CASOS ---------
+
+//---- Productores de grano inscriptos en ganancias
+    if (valorGanancias == "si" && valorCondicion == "productor")
+    {
+        switch (categoria) 
+        {
+            case "1":
+                document.getElementById("tp_ret1").innerHTML = "GG";
+                document.getElementById("ind_ret1").innerHTML = "09";
+                break;
+            
+            case "2":
+                document.getElementById("tp_ret1").innerHTML = "GG";
+                document.getElementById("ind_ret1").innerHTML = "01";
+                break;
+            
+            case "3":
+                document.getElementById("tp_ret1").innerHTML = "GG";
+                document.getElementById("ind_ret1").innerHTML = "02";
+                break;            
+        }
+    }
+
+    if (valorGanancias == "si" && valorCondicion == "corredor"9
+    {
+        switch (categoria) 
+        {
+            case "1":
+                document.getElementById("tp_ret1").innerHTML = "ERROR:";
+                document.getElementById("ind_ret1").innerHTML = "No existe corredor de granos categoria 1";
+                break;
+            
+            case "2":
+                document.getElementById("tp_ret1").innerHTML = "GG";
+                document.getElementById("ind_ret1").innerHTML = "05";
+                break;
+            
+            case "3":
+                document.getElementById("tp_ret1").innerHTML = "GG";
+                document.getElementById("ind_ret1").innerHTML = "06";
+                break;            
+        }
+    }
 }
 
+/*
+document.getElementById("tp_ret1").innerHTML = "";
+document.getElementById("ind_ret1").innerHTML = "";
+*/
