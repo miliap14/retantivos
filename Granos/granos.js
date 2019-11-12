@@ -16,8 +16,10 @@ document.getElementById("holis").addEventListener("click", cargar);
 
 function cargar()
 {
-    var valorCategoria = document.getElementById("categoria").value;
-    categoria = valorCategoria;
+    var valorCategoria = document.getElementById("categoria");
+    categoria = valorCategoria.options[valorCategoria.selectedIndex].text;
+    console.log(categoria);
+    
 
     for ( var i = 0; i < valorGanancias.length; i++)
     {
@@ -72,11 +74,26 @@ function cargar()
             case "3":
                 document.getElementById("tp_ret1").innerHTML = "GG";
                 document.getElementById("ind_ret1").innerHTML = "02";
-                break;            
+                break;
+            
+            case "INACTIVO":
+                document.getElementById("tp_ret1").innerHTML = "GG";
+                document.getElementById("ind_ret1").innerHTML = "03";
+                break;
         }
     }
 
-    if (valorGanancias == "si" && valorCondicion == "corredor"9
+//---- Productores de grano inscriptos en ganancias
+
+    if (valorGanancias == "no" && valorCondicion == "productor")
+    {
+        document.getElementById("tp_ret1").innerHTML = "GG";
+        document.getElementById("ind_ret1").innerHTML = "04";
+    }
+
+
+//---- Corredor de grano inscriptos en ganancias    
+    if (valorGanancias == "si" && valorCondicion == "corredor")
     {
         switch (categoria) 
         {
@@ -93,9 +110,23 @@ function cargar()
             case "3":
                 document.getElementById("tp_ret1").innerHTML = "GG";
                 document.getElementById("ind_ret1").innerHTML = "06";
-                break;            
+                break;
+            
+            case "INACTIVO":
+                document.getElementById("tp_ret1").innerHTML = "GG";
+                document.getElementById("ind_ret1").innerHTML = "07";
+                break;
         }
     }
+
+//---- Corredor de grano NO inscriptos en ganancias  
+
+    if (valorGanancias == "no" && valorCondicion == "corredor")
+    {
+        document.getElementById("tp_ret1").innerHTML = "GG";
+        document.getElementById("ind_ret1").innerHTML = "08";
+    }
+
 }
 
 /*
