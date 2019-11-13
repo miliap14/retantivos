@@ -43,10 +43,12 @@ var valorCondicion = document.getElementsByName("condicion");
 var valorActividad =document.getElementsByName("actividad");
 var valorRegimen = document.getElementsByName("regimen");
 var valorIva = document.getElementsByName("conIVA");
+var valorProductor = document.getElementsByName("productor");
 
 var condition;
 var activity;
 var IVA;
+var productor;
 
 function cargar() 
 {
@@ -54,18 +56,27 @@ function cargar()
     //------ LIMPIAMOS -----
     //-------------------------------------------
 
-    document.getElementById("indicador1").innerHTML = "";
-    document.getElementById("indicador2").innerHTML = "";
-    document.getElementById("indicador3").innerHTML = "";
-    document.getElementById("indicador4").innerHTML = "";
-    document.getElementById("indicador5").innerHTML = "";
-    document.getElementById("indicador6").innerHTML = "";
-    document.getElementById("indicador7").innerHTML = "";
-    document.getElementById("indicador8").innerHTML = "";
-    document.getElementById("indicador8").innerHTML = "";
     document.getElementById("ex1").innerHTML = "";
     document.getElementById("ex2").innerHTML = "";
     document.getElementById("ex3").innerHTML = "";
+    
+    for (var i = 1; i < 9; i++)
+    {
+        var apuntador = "indicador" + i.toString();
+        document.getElementById(apuntador).innerHTML = "";
+    }
+
+    for (var i = 1; i < 17; i++)
+    {
+        var apuntador = "tip" + i.toString();
+        document.getElementById(apuntador).innerHTML = "";
+    }
+
+    for (var i = 1; i < 17; i++)
+    {
+        var apuntador = "ind" + i.toString();
+        document.getElementById(apuntador).innerHTML = "";
+    }
 
     //-------------------------------------------
     //--- OBTENEMOS LOS VALORES DE LOS CHECK ----
@@ -101,6 +112,14 @@ function cargar()
         {
             document.getElementById("indicador5").innerHTML = "SG";
             document.getElementById("indicador6").innerHTML = "01";
+        }
+    }
+
+    for ( var i = 0; i < valorProductor.length; i++)
+    {
+        if(valorProductor[i].checked)
+        {
+           productor = valorProductor[i].value;
         }
     }
 
@@ -200,5 +219,45 @@ function cargar()
         document.getElementById("ex1").innerHTML = "";
         document.getElementById("ex2").innerHTML = "";
         document.getElementById("ex3").innerHTML = "";
+    }
+
+    if (productor == "si")
+    {
+        //-----> TIPO
+        document.getElementById("tip1").innerHTML = "PA";
+        document.getElementById("tip2").innerHTML = "PB";
+        document.getElementById("tip3").innerHTML = "PD";
+        document.getElementById("tip4").innerHTML = "PE";
+        document.getElementById("tip5").innerHTML = "PF";
+        document.getElementById("tip6").innerHTML = "PH";
+        document.getElementById("tip7").innerHTML = "PJ";
+        document.getElementById("tip8").innerHTML = "PK";
+        document.getElementById("tip9").innerHTML = "PM";
+        document.getElementById("tip10").innerHTML = "PN";
+        document.getElementById("tip11").innerHTML = "PP";
+        document.getElementById("tip12").innerHTML = "PQ";
+        document.getElementById("tip13").innerHTML = "PS";
+        document.getElementById("tip14").innerHTML = "PU";
+        document.getElementById("tip15").innerHTML = "PV";
+        document.getElementById("tip16").innerHTML = "PX";
+
+        //----> INDICADORES RESPECTIVOS AL TIPO
+
+        document.getElementById("ind1").innerHTML = "02";
+        document.getElementById("ind2").innerHTML = "02";
+        document.getElementById("ind3").innerHTML = "11";
+        document.getElementById("ind4").innerHTML = "02";
+        document.getElementById("ind5").innerHTML = "02";
+        document.getElementById("ind6").innerHTML = "02";
+        document.getElementById("ind7").innerHTML = "01";
+        document.getElementById("ind8").innerHTML = "01";
+        document.getElementById("ind9").innerHTML = "02";
+        document.getElementById("ind10").innerHTML = "03";
+        document.getElementById("ind11").innerHTML = "02";
+        document.getElementById("ind12").innerHTML = "02";
+        document.getElementById("ind13").innerHTML = "02";
+        document.getElementById("ind14").innerHTML = "02";
+        document.getElementById("ind15").innerHTML = "01";
+        document.getElementById("ind16").innerHTML = "02";
     }
 }
